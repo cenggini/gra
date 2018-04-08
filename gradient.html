@@ -1,0 +1,148 @@
+
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+
+  <meta charset="UTF-8">
+  <link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico" />
+  <link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111" />
+  <title>CodePen - CSS3 Backgrounds</title>
+  
+  
+  
+  
+      <style>
+      @import url(https://fonts.googleapis.com/css?family=Cousine);
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,400);
+*, *:before, *:after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+html, body {
+	width: 100%;
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+	-moz-text-size-adjust: auto;
+	-moz-text-size-adjust: 100%;
+	text-rendering: optimizelegibility;
+	font: 400 normal 16px/20px 'Raleway', 'Open Sans', 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', 'Lucida Grande', sans-serif;
+	color: whitesmoke;
+	background: #fff;
+}
+h1 {
+	text-align: center;
+	margin: 2rem 0 1rem 0;
+	font-weight: 300;
+	color: gold;
+}
+p {
+	-webkit-transform: translateX(20%);
+	transform: translateX(3%);
+	width: 90%;
+	color:#222;
+	text-align: left;
+}
+a {
+	text-decoration: none;
+	color: #4093CD;
+}
+main {
+	width: 100%;
+	padding: 1rem;
+}
+.row {
+	display: table;
+	width: 100%;
+	height: 150px;
+	margin: 0.5rem 0;
+	transition: height 200ms 500ms;
+}
+.row:hover {
+	height: 300px;
+}
+.preview {
+	display: table-cell;
+	border: 2px solid whitesmoke;
+	padding: 1rem;
+	font-family: 'Cousine', 'Consolas', 'Andale Mono WT', 'Andale Mono', 'Courier New', 'Courier', monospace;
+	font-size: 0.875rem;
+	white-space: pre-wrap;
+}
+    </style>
+
+  
+  
+  
+  
+
+</head>
+
+<body translate="no" >
+
+  <h1>CSS3 Backgrounds</h1>
+<p> Hanya sintaks standar, bukan prefiks, jadi jika kalian tidak melihat background, yah, saya sarankan kalian untuk menggunakan beberapa peramban yang lebih baik seperti<a href="https://www.mozilla.org/firefox" target="_blank">Firefox</a>, dan<a href="https://github.com/ai/autoprefixer/" target="_blank">Autoprefixer</a>.</p>
+<main id="main"></main>
+  
+  
+  
+
+    <script >
+      var backgrounds = [
+	'background: linear-gradient(to right bottom, dodgerblue, palevioletred);',
+	'background:\n\tlinear-gradient(to right bottom, #543A69, transparent),\n\tlinear-gradient(to left bottom, #7A8E97, transparent),\n\tlinear-gradient(to left top, #6093A8, transparent),\n\tlinear-gradient(to right top, #BC8394, transparent);',
+	'background:\n\tlinear-gradient(135deg, #543A69, transparent),\n\tlinear-gradient(255deg, #7A8E97, transparent),\n\tlinear-gradient(315deg, #6093A8, transparent),\n\tlinear-gradient(45deg, #BC8394, transparent);',
+	'background:\n\tlinear-gradient(90deg, rgba(255, 128, 128, 0.65) 0%, rgba(255, 164, 128, 0.65) 10%, rgba(255, 202, 128, 0.65) 20%, rgba(255, 240, 128, 0.65) 30%, rgba(232, 255, 128, 0.65) 40%, rgba(193, 255, 128, 0.65) 50%, rgba(155, 255, 128, 0.65) 60%, rgba(128, 255, 138, 0.65) 70%, rgba(128, 255, 176, 0.65) 80%, rgba(128, 255, 215, 0.65) 90%, rgba(128, 255, 253, 0.65) 100%),\n\tlinear-gradient(-90deg, rgba(204, 255, 254, 0.45) 0%, rgba(204, 241, 255, 0.45) 10%, rgba(204, 225, 255, 0.45) 20%, rgba(204, 210, 255, 0.45) 30%, rgba(213, 204, 255, 0.45) 40%, rgba(229, 204, 255, 0.45) 50%, rgba(244, 204, 255, 0.45) 60%, rgba(255, 204, 251, 0.45) 70%, rgba(255, 204, 235, 0.45) 80%, rgba(255, 204, 220, 0.45) 90%, rgba(255, 204, 205, 0.45) 100%);',
+	'background:\n\tlinear-gradient(limegreen, transparent),\n\tlinear-gradient(90deg, skyblue, transparent),\n\tlinear-gradient(-90deg, coral, transparent);\nbackground-blend-mode: screen;',
+	'background: linear-gradient(90deg, #94719A, #3AC5C9)',
+	'background: linear-gradient(to bottom right, #33799d, #e8ebb4);',
+	'background: linear-gradient(135deg,  #2c539e, #63967d);',
+	'background: linear-gradient(to bottom right, rgba(41, 36, 132, 0.85), rgba(102, 245, 201, 0.85));',
+	'background: linear-gradient(to left, rgba(0, 0, 0, 0.49) 0%, rgba(40, 151, 85, 0.49) 47.19%, rgba(255, 255, 255, 0.49) 100%) #26b4dd;',
+	'background: linear-gradient(5deg, #036564, #033649);',
+	'background: linear-gradient(-45deg, #183850 25%, #192c46 50%, #22254c 75%);',
+	'background: linear-gradient(#0d1944, #49aae7);',
+	'background: linear-gradient(#7abcff, #60abf8 44%, #4096ee);',
+	'background: linear-gradient(#289dd7, #0e8acf);',
+	'background: linear-gradient(#00b7ea, #009ec3);',
+	'background: radial-gradient(circle farthest-corner at center top, #3c3b52 0%, #252233 80%);',
+	'background: linear-gradient(to bottom, #412f50, #131837);',
+	'background:\n\tradial-gradient(ellipse at bottom left, rgba(104,128,138,0.4) 10%, rgba(138,114,76,0) 40%),\n\tlinear-gradient(to bottom, rgba(57,173,219,.25), rgba(42,60,87,0.4)),\n\tlinear-gradient(135deg, #670d10, #092756);',
+	'background: linear-gradient(135deg,  #ff2247, #1e3f9f);',
+	'background: linear-gradient(to right bottom, rgba(0, 47, 75, 0.8), rgba(220, 66, 37, 0.8)) whitesmoke;',
+	'background: linear-gradient(to right bottom, #002f4b, #dc4225);',
+	'background: linear-gradient(135deg, #723362, #9d223c);',
+	'background: linear-gradient(to right bottom, rgba(211, 131, 18, 0.85), rgba(168, 50, 121, 0.85));',
+	'background: linear-gradient(90deg, rgba(250, 0, 133, 0.4), rgba(250, 112, 0, 0.4))',
+	'background: linear-gradient(135deg, rgba(198, 33, 69, 0.75) 0%,rgba(198,117,45,0.75) 100%);',
+	'background: linear-gradient(45deg, rgb(135, 28, 10) 20%, rgb(252, 124, 15) 61%, rgb(253, 121, 20) 100%);',
+	'background: linear-gradient(#dd879f, #4e337e);',
+	'background: linear-gradient(to right bottom, rgba(226, 180, 254, 1), rgba(106, 85, 252, 1));',
+	'background: linear-gradient(to right bottom, #CC59EA 20%, #647CF5, #4FC9FB 80%);',
+	'background: linear-gradient(#8b9da9, #fff6e4);\nbox-shadow: inset 0 0 100px hsla(0,0%,0%,.3);',
+	'background: radial-gradient(ellipse at top left, rgba(105,155,200,1) 0%,rgba(181,197,216,1) 57%);',
+	'background:\n\tlinear-gradient(45deg, rgba(194, 233, 221, 0.5) 1%, rgba(104, 119, 132, 0.5) 100%),\n\tlinear-gradient(-45deg, #494d71 0%, rgba(217, 230, 185, 0.5) 80%);',
+	'background:\n\tlinear-gradient(135deg, rgba(244,226,156,0) 0%,rgba(59,41,58,1) 100%),\n\tlinear-gradient(to right, rgba(244,226,156,1) 0%,rgba(130,96,87,1) 100%);',
+	'background: radial-gradient(ellipse farthest-corner at 0 bottom , rgba(255, 255, 255, 0.15), rgba(0, 0, 0, 0.1) 100%) rgb(37, 37, 39);',
+	'background: radial-gradient(ellipse farthest-corner at 0 bottom , rgba(165, 97, 203, 0.15), rgba(0, 0, 0, 0.1) 100%) rgb(37, 37, 39);',
+	'background: radial-gradient(ellipse farthest-corner at 0 bottom , rgba(215, 94, 94, 0.15), rgba(0, 0, 0, 0.1) 100%) rgb(37, 37, 39);'
+];
+
+var html = '';
+backgrounds.forEach(function (item, index, array) {
+	html += '<div class="row"><div class="preview" style="' + item + '">' + item + '</div></div>';
+});
+document.getElementById('main').innerHTML = html;
+    </script>
+
+
+
+  
+  
+
+</body>
+
+</html>
+ 
